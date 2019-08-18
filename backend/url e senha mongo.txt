@@ -1,0 +1,4 @@
+lRcDWEmDfNcxjq0U
+mongodb+srv://admin:<password>@cluster0-r27kd.mongodb.net/test?retryWrites=true&w=majority
+
+mongodb+srv://admin:<password>@cluster0-r27kd.mongodb.net/test
