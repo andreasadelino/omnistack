@@ -3,6 +3,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 .login-container form {
@@ -36,4 +37,20 @@
     font-weight: bold;
     color: #FFF;
     cursor: pointer;
+}
+
+.messages {
+    max-width: 300px;
+    width: 100%;
+    font-size: 16px;
+    color: red;
+    padding: 15px 25px;
+    background: #f8dad3;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.messages span {
+    color: #DF4723;
 }

@@ -5,8 +5,6 @@ module.exports = {
     async index(req, res) {
         const { user } = req.headers;
 
-        console.log(user);
-
         const loggedDev = await Dev.findById(user);
 
         const users = await Dev.find({
@@ -30,11 +28,11 @@ module.exports = {
             return res.json(userExists);
         }
 
-        const response = await axios.get(`https://api.github.com/users/${username}`);
-
-        const { name, bio, avatar_url: avatar } = response.data;
-
         try {
+            const response = await axios.get(`https://api.github.com/users/${username}`);
+
+            const { name, bio, avatar_url: avatar } = response.data;
+
             const dev = await Dev.create({
                 name,
                 user: username,
@@ -45,7 +43,9 @@ module.exports = {
             return res.json(dev);
 
         } catch (error) {
-            return res.json({ erro: error.message });
+            return res
+                .status(400)
+                .json({ erro: error.message });
         }
     }
 };

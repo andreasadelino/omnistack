@@ -19,9 +19,8 @@ module.exports = {
 
         if (!loggedDev.deslikes.includes(targetDev._id)) {
             loggedDev.deslikes.push(targetDev._id);
+            await loggedDev.save();
         }
-
-        await loggedDev.save();
 
         return res.json(loggedDev);
     }
